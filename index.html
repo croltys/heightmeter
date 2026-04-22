@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Далекомір Висоти — Геометричний Практикум</title>
+    <style>
+        :root {
+            --primary-cyan: #00bcd4;
+            --dark-cyan: #0097a7;
+            --bg-gradient: linear-gradient(135deg, #009688 0%, #006064 100%);
+            --white: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background: var(--bg-gradient);
+            min-height: 100vh;
+            color: var(--white);
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+
+        header {
+            padding: 30px 5%;
+            display: flex;
+            align-items: center;
+        }
+
+        .brand-logo {
+            height: 40px;
+            margin-right: 15px;
+        }
+
+        .brand-text {
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 14px;
+            letter-spacing: 1px;
+            line-height: 1.2;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 8% 50px 8%;
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* Ліва частина */
+        .content {
+            flex: 1;
+            max-width: 600px;
+            z-index: 2;
+        }
+
+        h1 {
+            font-size: clamp(40px, 8vw, 100px);
+            line-height: 1.1;
+            margin-bottom: 40px;
+            font-weight: 500;
+        }
+
+        .btn-main {
+            display: inline-block;
+            background: var(--primary-cyan);
+            color: #003333;
+            padding: 15px 45px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            margin-bottom: 50px;
+            transition: transform 0.2s, background 0.2s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn-main:hover {
+            background: var(--white);
+            transform: translateY(-2px);
+        }
+
+        .stores {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .store-link img {
+            height: 45px;
+            transition: opacity 0.2s;
+        }
+
+        .store-link:hover img {
+            opacity: 0.8;
+        }
+
+        /* Центральна та права частина */
+        .visuals {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .app-icon-wrap {
+            position: absolute;
+            left: -80px;
+            bottom: 10%;
+            z-index: 3;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 5px;
+            border-radius: 30px;
+            border: 1px solid rgba(255,255,255,0.2);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .app-icon {
+            width: 180px;
+            height: 180px;
+            border-radius: 25px;
+            display: block;
+        }
+
+        .phone-mockup {
+            position: relative;
+            z-index: 1;
+            filter: drop-shadow(0 30px 60px rgba(0,0,0,0.5));
+            max-width: 350px;
+            width: 100%;
+        }
+
+        .phone-img {
+            width: 100%;
+            display: block;
+        }
+
+        /* Адаптивність */
+        @media (max-width: 1024px) {
+            main {
+                flex-direction: column;
+                text-align: center;
+                padding-top: 40px;
+            }
+
+            .content {
+                margin-bottom: 60px;
+            }
+
+            .stores {
+                justify-content: center;
+            }
+
+            .app-icon-wrap {
+                position: static;
+                margin-bottom: 20px;
+                display: inline-block;
+            }
+
+            .visuals {
+                flex-direction: column;
+            }
+            
+            h1 {
+                white-space: normal;
+            }
+        }
+
+        footer {
+            padding: 20px;
+            text-align: center;
+            font-size: 14px;
+            opacity: 0.7;
+        }
+
+        .footer-links a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="img/header-logo.jpg" alt="Logo" class="brand-logo">
+        <div class="brand-text">Геометричний<br>практикум</div>
+    </header>
+
+    <main>
+        <div class="content">
+            <h1>Далекомір<br>Висоти</h1>
+            
+            <a href="#" class="btn-main">Download the App</a>
+
+            <div class="stores">
+                <a href="#" class="store-link">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="App Store">
+                </a>
+                <a href="#" class="store-link">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play">
+                </a>
+            </div>
+        </div>
+
+        <div class="visuals">
+            <div class="app-icon-wrap">
+                <img src="img/rVJca.jpg" alt="App Icon" class="app-icon">
+            </div>
+            
+            <div class="phone-mockup">
+                <img src="img/screenshot.jpg" alt="App Screenshot" class="phone-img">
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="https://croltys.github.io/heightmeter-privacy/">Політика конфіденційності</a>
+        </div>
+        <p>© 2026 croltys. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
