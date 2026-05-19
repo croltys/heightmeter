@@ -50,26 +50,69 @@
         main {
             flex: 1;
             display: flex;
-            align-items: center;
+            align-items: flex-start; /* Изменено для лучшего выравнивания текста */
             justify-content: space-between;
-            padding: 0 8% 50px 8%;
+            padding: 40px 8% 50px 8%;
             max-width: 1400px;
             margin: 0 auto;
             width: 100%;
+            gap: 40px;
         }
 
         /* Ліва частина */
         .content {
-            flex: 1;
-            max-width: 600px;
+            flex: 12;
+            max-width: 650px;
             z-index: 2;
+            text-align: left;
         }
 
         h1 {
-            font-size: clamp(40px, 8vw, 100px);
+            font-size: clamp(36px, 6vw, 70px); /* Слегка оптимизирован размер */
             line-height: 1.1;
-            margin-bottom: 40px;
+            margin-bottom: 25px;
             font-weight: 500;
+        }
+
+        /* Стили для нового блока описания приложения */
+        .app-description {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .app-description p {
+            margin-bottom: 15px;
+        }
+
+        .app-description h2 {
+            font-size: 20px;
+            color: var(--primary-cyan);
+            margin: 25px 0 10px 0;
+            font-weight: 600;
+        }
+
+        .app-description ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin-bottom: 20px;
+        }
+
+        .app-description li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 10px;
+        }
+
+        .app-description li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--primary-cyan);
+            font-weight: bold;
+            font-size: 18px;
+            top: -2px;
         }
 
         .btn-main {
@@ -81,7 +124,7 @@
             text-decoration: none;
             font-weight: 600;
             font-size: 18px;
-            margin-bottom: 50px;
+            margin-bottom: 35px;
             transition: transform 0.2s, background 0.2s;
             box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
@@ -95,6 +138,7 @@
             display: flex;
             gap: 20px;
             flex-wrap: wrap;
+            margin-bottom: 20px;
         }
 
         .store-link img {
@@ -113,6 +157,7 @@
             align-items: center;
             justify-content: center;
             position: relative;
+            margin-top: 60px; /* Смещение под заголовок */
         }
 
         .app-icon-wrap {
@@ -129,8 +174,8 @@
         }
 
         .app-icon {
-            width: 180px;
-            height: 180px;
+            width: 150px;
+            height: 150px;
             border-radius: 25px;
             display: block;
         }
@@ -139,7 +184,7 @@
             position: relative;
             z-index: 1;
             filter: drop-shadow(0 30px 60px rgba(0,0,0,0.5));
-            max-width: 350px;
+            max-width: 320px;
             width: 100%;
         }
 
@@ -153,11 +198,19 @@
             main {
                 flex-direction: column;
                 text-align: center;
-                padding-top: 40px;
+                padding-top: 20px;
+                align-items: center;
             }
 
             .content {
-                margin-bottom: 60px;
+                max-width: 100%;
+                text-align: center;
+            }
+
+            .app-description {
+                text-align: left; /* Текст описания лучше оставить по левому краю для читаемости */
+                max-width: 700px;
+                margin: 0 auto 30px auto;
             }
 
             .stores {
@@ -172,24 +225,26 @@
 
             .visuals {
                 flex-direction: column;
-            }
-            
-            h1 {
-                white-space: normal;
+                margin-top: 20px;
             }
         }
 
         footer {
-            padding: 20px;
+            padding: 30px 20px;
             text-align: center;
             font-size: 14px;
             opacity: 0.7;
+            margin-top: auto;
         }
 
         .footer-links a {
             color: white;
             margin: 0 10px;
             text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -204,7 +259,32 @@
         <div class="content">
             <h1>Далекомір<br>Висоти</h1>
             
-            <a href="https://play.google.com/store/apps/details?id=com.croltys.heightmeter" class="btn-main">Download the App</a>
+            <div class="app-description">
+                <p><strong>Далекомір Висоти</strong> – це інтерактивний інструмент із серії "Геометричний практикум", який перетворює ваш смартфон на справжню лабораторію для вивчення прикладної математики.</p>
+                <p>Цей додаток створено для того, щоб продемонструвати, як шкільні формули з підручників геометрії та тригонометрії працюють у реальному світі. Від розв'язання задач на папері — до реальних вимірювань у вашому дворі!</p>
+                
+                <h2>Наочна демонстрація математики:</h2>
+                <ul>
+                    <li><strong>Геометрія в житті:</strong> Додаток допомагає зрозуміти принципи побудови трикутників та розрахунку висоти за допомогою кутів нахилу.</li>
+                    <li><strong>Навчальний аспект:</strong> Ідеально підходить для учнів та вчителів як наочний посібник з теми "Розв'язування прямокутних трикутників".</li>
+                    <li><strong>Простість та зрозумілість:</strong> Ви наочно бачите, як зміна кута нахилу смартфона миттєво впливає на математичний результат.</li>
+                </ul>
+
+                <h2>Як працює "математика в камері"?</h2>
+                <p>Додаток використовує вбудований акселерометр для визначення кута між рівнем очей та вершиною об'єкта. Знаючи відстань до об'єкта та свій зріст, алгоритм застосовує базові тригонометричні функції для обчислення висоти. Це та сама задача з підручника, але тепер ви — її головний герой!</p>
+
+                <h2>Особливості додатка:</h2>
+                <ul>
+                    <li>Швидкий, точний та зрозумілий алгоритм вимірювання.</li>
+                    <li>Візуальний візир для точного наведення на вершину об'єкта.</li>
+                    <li>Не потребує реєстрації та працює повністю в автономному режимі (офлайн).</li>
+                    <li><strong>Повна конфіденційність:</strong> додаток не збирає жодних даних, не робить фотографій та не передає зображення з камери.</li>
+                </ul>
+                
+                <p>Використовуйте <em>Далекомір Висоти</em> для шкільних проектів, при підрахунках під час прогулянок або просто для саморозвитку. Побачте красу та практичність математики навколо себе!</p>
+            </div>
+            
+            <a href="https://play.google.com/store/apps/details?id=com.croltys.heightmeter" class="btn-main">Завантажити додаток</a>
 
             <div class="stores">
                 <a href="#" class="store-link">
